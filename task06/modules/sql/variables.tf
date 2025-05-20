@@ -1,59 +1,64 @@
-variable "resource_group_name" {
-  type        = string
-  description = "The name of the resource group where the SQL Server and Database will be deployed."
-}
-
 variable "location" {
   type        = string
-  description = "The Azure region where the SQL Server and Database will be deployed (e.g., 'westus2')."
+  description = "Azure region where resources will be deployed"
+}
+
+variable "rg_name" {
+  type        = string
+  description = "Name of the resource group"
 }
 
 variable "sql_server_name" {
   type        = string
-  description = "The name of the Azure SQL Server."
+  description = "Name of the Azure SQL Server instance"
 }
 
 variable "sql_db_name" {
   type        = string
-  description = "The name of the Azure SQL Database."
+  description = "Name of the SQL Database"
 }
 
-variable "sql_db_sku" {
+variable "sql_sku" {
   type        = string
-  description = "The SKU name for the Azure SQL Database (e.g., 'S2')."
+  description = "The SKU for the SQL database (e.g., Basic, S0)"
 }
 
-variable "sql_admin_username" {
+variable "sql_fwr_name" {
   type        = string
-  description = "The administrator username for the Azure SQL Server."
+  description = "Name for the SQL Server firewall rule"
 }
 
-variable "key_vault_id" {
+variable "sql_admin_secret_name" {
   type        = string
-  description = "The ID of the existing Azure Key Vault where SQL admin credentials will be stored."
+  description = "Name of the Key Vault secret to store SQL admin username"
 }
 
-variable "secret_name_admin" {
+variable "sql_admin_secret_password" {
   type        = string
-  description = "The name of the Key Vault secret for the SQL admin username."
-}
-
-variable "secret_name_password" {
-  type        = string
-  description = "The name of the Key Vault secret for the SQL admin password."
+  description = "Name of the Key Vault secret to store SQL admin password"
 }
 
 variable "allowed_ip_address" {
   type        = string
-  description = "The IP address allowed to access the SQL Server (e.g., verification agent IP)."
-}
-
-variable "firewall_rule_name" {
-  type        = string
-  description = "The name of the firewall rule for the allowed IP address."
+  description = "IP address allowed to access the SQL Server"
 }
 
 variable "tags" {
   type        = map(string)
-  description = "A map of tags to apply to the SQL Server and Database resources."
+  description = "Tags to apply to resources"
+}
+
+variable "kv_rg_name" {
+  description = "Resource Group name of existing Key Vault"
+  type        = string
+}
+
+variable "kv_name" {
+  description = "Name of existing Key Vault"
+  type        = string
+}
+
+variable "sql_admin_username" {
+  description = "Name of sql admin username"
+  type        = string
 }
