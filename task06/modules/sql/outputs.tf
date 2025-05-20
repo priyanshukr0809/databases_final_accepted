@@ -15,10 +15,3 @@ output "sql_server_fqdn" {
   description = "SQL Server FQDN"
   value       = azurerm_mssql_server.sql.fully_qualified_domain_name
 }
-
-# Test output to verify if validation tool recognizes sensitive attribute
-output "sql_connection_string_test" {
-  description = "Test output to verify sensitive attribute recognition."
-  value       = "test-connection-string"
-  sensitive   = true
-}
