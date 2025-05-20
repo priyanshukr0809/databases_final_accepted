@@ -1,9 +1,9 @@
 output "sql_server_fqdn" {
-  description = "The fully qualified domain name of the Azure SQL Server."
+  description = "Fully qualified domain name of SQL Server"
   value       = module.sql.sql_server_fqdn
 }
 
 output "app_hostname" {
-  description = "The default hostname of the Azure Linux Web App."
+  description = "Hostname of Linux Web App"
   value       = module.webapp.app_hostname
 }
