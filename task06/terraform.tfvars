@@ -1,5 +1,5 @@
 name_prefix          = "cmaz-w6544eus-mod6"
-location             = "East US"
+location             = "westus2"
 key_vault_rg_name    = "cmaz-w6544eus-mod6-kv-rg"
 key_vault_name       = "cmaz-w6544eus-mod6-kv"
 sql_db_sku           = "S2"
