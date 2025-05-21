@@ -11,3 +11,6 @@ app_dotnet_version        = "8.0"
 student_email             = "priyanshu_kumar@epam.com"
 allowed_ip_address        = "18.153.146.156"
 sql_admin_username        = "adminUser"
+tags = {
+  Creator = "priyanshu_kumar@epam.com"
+}
