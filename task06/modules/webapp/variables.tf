@@ -1,40 +1,41 @@
-variable "location" {
+variable "resource_group_name" {
   type        = string
-  description = "Azure region where the App Service and related resources will be deployed"
+  description = "The name of the resource group where the App Service Plan and Web App will be deployed."
 }
 
-variable "rg_name" {
+variable "location" {
   type        = string
-  description = "Name of the resource group in which the App Service resources will be created"
+  description = "The Azure region where the App Service Plan and Web App will be deployed (e.g., 'westus2')."
 }
 
 variable "asp_name" {
   type        = string
-  description = "Name of the Azure App Service Plan"
-}
-
-variable "app_name" {
-  type        = string
-  description = "Name of the Azure Linux Web Application"
+  description = "The name of the Azure App Service Plan."
 }
 
 variable "asp_sku" {
   type        = string
-  description = "The SKU tier for the App Service Plan (e.g., B1, S1)"
+  description = "The SKU name for the Azure App Service Plan (e.g., 'P0v3')."
+}
+
+variable "app_name" {
+  type        = string
+  description = "The name of the Azure Linux Web App."
 }
 
 variable "dotnet_version" {
   type        = string
-  description = "The .NET Core version to be used by the Web Application (e.g., 6.0, 7.0)"
+  description = "The .NET version for the Linux Web App (e.g., '8.0')."
 }
 
+# Explicitly marked as sensitive to receive the secure SQL connection string
 variable "sql_connection_string" {
   type        = string
-  description = "Connection string to the Azure SQL Database (ADO.NET format)"
+  description = "The connection string for the Azure SQL Database to be used by the Web App."
   sensitive   = true
 }
 
 variable "tags" {
   type        = map(string)
-  description = "Tags to apply to all Azure resources"
+  description = "A map of tags to apply to the App Service Plan and Web App resources."
 }
